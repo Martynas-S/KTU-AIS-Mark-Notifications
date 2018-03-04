@@ -1,0 +1,11 @@
+Asmens sveikatos ugdymas : 8C674AC7
+Informacin�s technologijos : D1A76A99
+Kompiuterin� grafika : FEADBE24
+Matematika 1 : 2C5BF79
+Objektinis programavimas 1 : D7FF1E1C
+Taikomoji psichologija : 9638E0E1
+Filosofija : ADA5145F
+Fizika 1 : 437C1966
+Matematika 2 : 76C46F15
+Objektinis programavimas 2 : BB04E2F8
+Skaitmenin�s logikos pradmenys : 64886F
