@@ -18,8 +18,8 @@ namespace KTU_AIS_Scraper
 
     class Program
     {       
-        private readonly static string Username = "***REMOVED***";
-        private readonly static string Password = "***REMOVED***";
+        private readonly static string Username = "";
+        private readonly static string Password = "";
 
         private static RestClient client;
         private static HtmlParser parser;
