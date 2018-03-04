@@ -18,15 +18,23 @@ namespace KTU_AIS_Scraper
 
     class Program
     {       
-        private readonly static string Username = "";
-        private readonly static string Password = "";
-
         private static RestClient client;
         private static HtmlParser parser;
 
+        private static readonly string passwordFileName = "password.txt";
+
         static void Main(string[] args)
         {
-            LoginData login = LoginManager.GetAuthCookies(Username, Password);
+            string username = null
+                 , password = null;
+
+            using(StreamReader reader = new StreamReader(passwordFileName))
+            {
+                username = reader.ReadLine();
+                password = reader.ReadLine();
+            }
+
+            LoginData login = LoginManager.GetAuthCookies(username, password);
 
             client = new RestClient();
             parser = new HtmlParser();
