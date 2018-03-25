@@ -1,10 +1,7 @@
 ﻿using Microsoft.Toolkit.Uwp.Notifications;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+using Tray_Version.Services.ToastNotificator;
 using Windows.Data.Xml.Dom;
 using Windows.UI.Notifications;
 
@@ -53,7 +50,6 @@ namespace Tray_Version
             DesktopNotificationManagerCompat.CreateToastNotifier().Show(toast);
         }
     }
-
 
     [ClassInterface(ClassInterfaceType.None)]
     [ComSourceInterfaces(typeof(INotificationActivationCallback))]

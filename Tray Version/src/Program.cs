@@ -18,7 +18,7 @@ namespace Tray_Version
             Application.SetCompatibleTextRenderingDefault(false);
 
             ToastNotificator.PrepareNotificationManager();
-            ToastNotificator.SendToast("Hello world!");
+            ToastNotificator.SendToast(WebScraper.CheckForNewMarks());
 
             // Show the system tray icon.
             using (ProcessIcon pi = new ProcessIcon())
@@ -27,10 +27,7 @@ namespace Tray_Version
 
                 // Make sure the application runs!
                 Application.Run();
-            }
-        }
-
-        
-
+            }            
+        }        
     }    
 }

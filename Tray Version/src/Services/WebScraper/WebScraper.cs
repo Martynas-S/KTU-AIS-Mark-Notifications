@@ -1,26 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using RestSharp;
 using AngleSharp.Parser.Html;
-using RestSharp.Authenticators;
 using AngleSharp.Dom.Html;
 using System.IO;
+using Tray_Version.Services.WebScraper;
 
-namespace KTU_AIS_Scraper
+namespace Tray_Version
 {
 
-    class Program
+    public static class WebScraper
     {       
         private static RestClient client;
         private static HtmlParser parser;
 
         private static readonly string passwordFileName = "password.txt";
 
-        static void Main(string[] args)
+        public static string CheckForNewMarks()
         {
             string username = null
                  , password = null;
@@ -59,7 +57,8 @@ namespace KTU_AIS_Scraper
                 }
             }
 
-            Console.WriteLine("\nNew marks : {0}",
+            return
+            String.Format("\nNew marks : {0}",
                    File.ReadAllText(latestLog).GetHashCode()
                 != File.ReadAllText(filename).GetHashCode());
         }
@@ -119,21 +118,14 @@ namespace KTU_AIS_Scraper
             return modules;
         }
 
-        static List<Mark> GetMarksByModules()
-        {
-            List<Mark> marks = new List<Mark>();
-
-            return marks;
-        }
-
         static string GetMarkHtmlByModule(Module module, LoginData login)
         {
             client.BaseUrl = new Uri("https://uais.cr.ktu.lt");
             client.CookieContainer = login.Cookies;
 
             var request = new RestRequest("ktuis/STUD_SS2.infivert", Method.POST);
-            request.AddParameter("p1", module.p1);
-            request.AddParameter("p2", module.p2);
+            request.AddParameter("p1", module.P1);
+            request.AddParameter("p2", module.P2);
 
             IRestResponse response = client.Execute(request);
             var document = parser.Parse(response.Content);

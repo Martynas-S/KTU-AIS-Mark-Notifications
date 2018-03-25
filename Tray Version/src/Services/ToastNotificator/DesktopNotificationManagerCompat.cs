@@ -20,7 +20,7 @@ using System.Runtime;
 using System.Text;
 using Windows.UI.Notifications;
 
-namespace Tray_Version
+namespace Tray_Version.Services.ToastNotificator
 {
     public class DesktopNotificationManagerCompat
     {
