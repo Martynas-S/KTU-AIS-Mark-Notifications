@@ -127,7 +127,7 @@
   <data name="Explorer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\explorer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SystemTrayApp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\systemtrayapp.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="KTUIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\KTUIcon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

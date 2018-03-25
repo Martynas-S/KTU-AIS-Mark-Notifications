@@ -93,9 +93,9 @@ namespace Tray_Version.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon SystemTrayApp {
+        internal static System.Drawing.Icon KTUIcon {
             get {
-                object obj = ResourceManager.GetObject("SystemTrayApp", resourceCulture);
+                object obj = ResourceManager.GetObject("KTUIcon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

@@ -166,7 +166,10 @@
     <Content Include="Images\About.png" />
     <Content Include="Images\Exit.png" />
     <Content Include="Images\Explorer.png" />
-    <Content Include="Images\SystemTrayApp.ico" />
+    <None Include="Images\KTUIcon.ico" />
+    <Content Include="Images\Logo.png" />
+    <Content Include="Images\LogoTransparent.png" />
+    <None Include="Resources\KTU.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
