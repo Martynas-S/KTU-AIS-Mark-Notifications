@@ -3,45 +3,23 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using Windows.Data.Xml.Dom;
 using Windows.UI.Notifications;
 
 namespace Tray_Version
 {
-    // NOTE: https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/send-local-toast-desktop
-    //       https://github.com/WindowsNotifications/desktop-toasts
-
-    static class Program
+    static class ToastNotificator
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
+        public static void PrepareNotificationManager()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
             // Register AUMID and COM server (for Desktop Bridge apps, this no-ops)
             DesktopNotificationManagerCompat.RegisterAumidAndComServer<MyNotificationActivator>("Manomama7.KTU-AIS_Scraper");
-            //Step 7
             DesktopNotificationManagerCompat.RegisterActivator<MyNotificationActivator>();
-
-            ToastIt();
-
-            // Show the system tray icon.
-            using (ProcessIcon pi = new ProcessIcon())
-            {
-                pi.Display();
-
-                // Make sure the application runs!
-                Application.Run();
-            }
         }
 
-        private static void ToastIt()
+        public static void SendToast(string text)
         {
             // Construct the visuals of the toast (using Notifications library)
             ToastContent toastContent = new ToastContent()
@@ -57,7 +35,7 @@ namespace Tray_Version
                             {
                             new AdaptiveText()
                                 {
-                                Text = "Hello world!"
+                                Text = text
                                 }
                             }
                     }
@@ -74,8 +52,8 @@ namespace Tray_Version
             // And then show it
             DesktopNotificationManagerCompat.CreateToastNotifier().Show(toast);
         }
-
     }
+
 
     [ClassInterface(ClassInterfaceType.None)]
     [ComSourceInterfaces(typeof(INotificationActivationCallback))]
